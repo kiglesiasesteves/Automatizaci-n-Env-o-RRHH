@@ -1,0 +1,1 @@
+Se necesita un archivo logo.png para que el script funcione. Puedes usar cualquier imagen PNG pequeña como logo de la empresa.
