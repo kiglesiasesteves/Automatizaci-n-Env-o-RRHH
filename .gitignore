@@ -1,1 +1,22 @@
+# Archivos de entorno (contienen información sensible)
 .env
+
+# Logs de ejecución
+logs/
+
+# Archivos de Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Base de datos SQLite
+*.db
+*.sqlite3
+
+# Entorno virtual
+venv/
+
+# Archivos temporales
+.DS_Store
+Thumbs.db

@@ -15,6 +15,10 @@ Esta aplicación permite enviar automáticamente emails a empleados con informac
 - ✅ Datos de prueba incluidos para testing
 - ✅ Manejo de errores robusto
 - ✅ Logo personalizable en emails
+- ✅ **Automatización con Crontab** (envío cada 3 meses)
+- ✅ **Logging completo** de ejecuciones automáticas
+- ✅ **Script de instalación** one-click
+- ✅ **Estructura modular** y escalable
 
 ## 🛠️ Requisitos
 
@@ -112,6 +116,43 @@ python src/email_sender.py
 # Script simplificado
 python src/email_sender_simple.py
 ```
+
+### 🕐 Automatización con Crontab (Recomendado)
+
+Para envío automático cada 3 meses:
+
+```bash
+# 1. Obtener ruta absoluta del proyecto
+pwd  # Copiar la ruta que aparece
+
+# 2. Configurar crontab
+crontab -e
+
+# 3. Añadir línea para ejecución trimestral (1 de enero, abril, julio, octubre a las 9:00 AM)
+0 9 1 1,4,7,10 * /ruta/completa/al/proyecto/run_cron.sh
+
+# 4. Verificar configuración
+crontab -l
+```
+
+#### 📋 Otras frecuencias disponibles:
+- **Mensual**: `0 9 1 * *` (primer día de cada mes)
+- **Semestral**: `0 9 1 1,7 *` (enero y julio)
+- **Anual**: `0 9 1 1 *` (1 de enero)
+
+#### 📊 Logs y monitoreo:
+```bash
+# Ver logs de ejecución
+ls -la logs/cron_email_*.log
+
+# Ver último log
+tail -20 logs/cron_email_$(ls logs/cron_email_*.log | sort | tail -1 | cut -d'/' -f2)
+
+# Probar manualmente
+./run_cron.sh
+```
+
+📖 **Guía completa**: Ver `docs/crontab_setup.md` para configuración detallada.
 
 ### Comandos de Django (si aplica)
 ```bash
@@ -261,7 +302,9 @@ Para mejorar la mantenibilidad y profesionalizar el código, se realizó una reo
 | `config/settings.py` | Configuraciones centralizadas |
 | `templates/vacation_reminder.html` | Plantilla HTML extraída del código |
 | `docs/setup_guide.md` | Guía detallada de configuración |
+| `docs/crontab_setup.md` | Configuración de automatización con crontab |
 | `setup.sh` | Script de instalación automática |
+| `run_cron.sh` | Script wrapper para ejecución en crontab |
 
 #### 🔧 **Mejoras implementadas:**
 
@@ -298,6 +341,10 @@ python3 src/email_sender.py
 
 # O usar instalación automática
 ./setup.sh
+
+# NUEVO: Automatización con crontab
+crontab -e
+# Añadir: 0 9 1 1,4,7,10 * /ruta/completa/al/proyecto/run_cron.sh
 ```
 
 Esta reorganización mantiene toda la funcionalidad original mientras mejora significativamente la estructura y mantenibilidad del proyecto.
