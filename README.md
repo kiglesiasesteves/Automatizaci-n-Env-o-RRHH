@@ -237,6 +237,71 @@ El script muestra información detallada:
 ✅ Email enviado exitosamente a Keyla Anais
 ```
 
+## 📦 Historial de Reorganización
+
+### 🔄 Reestructuración del Proyecto (v2.0)
+
+Para mejorar la mantenibilidad y profesionalizar el código, se realizó una reorganización completa:
+
+#### 📁 **Movimientos de archivos:**
+
+| **Archivo Original** | **Nueva Ubicación** | **Descripción** |
+|---------------------|-------------------|-----------------|
+| `prueba.py` | `src/email_sender.py` | Script principal renombrado |
+| `prueba_simple.py` | `src/email_sender_simple.py` | Versión simplificada |
+| `models.py` | `src/models.py` | Modelos de datos |
+| `logo.png` | `assets/logo.png` | Logo empresarial |
+| `logo_instructions.txt` | `assets/logo_instructions.txt` | Instrucciones del logo |
+| `.env.example` | `config/.env.example` | Plantilla de configuración |
+
+#### 🆕 **Archivos nuevos creados:**
+
+| **Archivo** | **Propósito** |
+|------------|---------------|
+| `config/settings.py` | Configuraciones centralizadas |
+| `templates/vacation_reminder.html` | Plantilla HTML extraída del código |
+| `docs/setup_guide.md` | Guía detallada de configuración |
+| `setup.sh` | Script de instalación automática |
+
+#### 🔧 **Mejoras implementadas:**
+
+1. **Separación de responsabilidades:**
+   - Código fuente en `src/`
+   - Configuraciones en `config/`
+   - Recursos en `assets/`
+   - Plantillas en `templates/`
+   - Documentación en `docs/`
+
+2. **Configuración centralizada:**
+   - Variables de entorno en `config/settings.py`
+   - Rutas automáticas y relativas
+   - Datos de prueba centralizados
+
+3. **Mantenibilidad mejorada:**
+   - Plantilla HTML en archivo separado
+   - Configuraciones reutilizables
+   - Código más modular
+
+4. **Experiencia de usuario:**
+   - Instalación automatizada con `setup.sh`
+   - Documentación más detallada
+   - Nombres de archivos más descriptivos
+
+#### 🚀 **Comandos actualizados:**
+
+```bash
+# Antes
+python3 prueba.py
+
+# Ahora
+python3 src/email_sender.py
+
+# O usar instalación automática
+./setup.sh
+```
+
+Esta reorganización mantiene toda la funcionalidad original mientras mejora significativamente la estructura y mantenibilidad del proyecto.
+
 ## 🤝 Contribución
 
 1. Fork el proyecto
