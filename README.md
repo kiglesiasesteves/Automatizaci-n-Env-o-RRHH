@@ -98,13 +98,19 @@ SMTP_PASS=tu_contraseña_de_aplicacion
 
 ## 🏃‍♂️ Uso
 
-### Ejecución básica
+### Instalación rápida
 ```bash
-# Ejecutar script principal
-python3 prueba.py
+# Ejecutar script de instalación automática
+./setup.sh
+```
 
-# Ejecutar versión simplificada
-python3 prueba_simple.py
+### Ejecución manual
+```bash
+# Script principal completo
+python src/email_sender.py
+
+# Script simplificado
+python src/email_sender_simple.py
 ```
 
 ### Comandos de Django (si aplica)
@@ -117,20 +123,26 @@ python manage.py send_vacation_summary
 
 ```
 📦 PruebaE-mails/
-├── 📄 prueba.py              # Script principal completo
-├── 📄 prueba_simple.py       # Versión simplificada
-├── 📄 models.py              # Modelos de datos (Django)
-├── 📄 .env                   # Variables de entorno (NO subir a git)
-├── 📄 .env.example           # Plantilla de configuración
-├── 📄 .gitignore             # Archivos ignorados por git
-├── 📄 requirements.txt       # Dependencias de Python
-├── 📄 README.md              # Este archivo
-├── 🖼️ logo.png               # Logo para emails (se genera automáticamente)
-├── 📄 logo_instructions.txt  # Instrucciones para el logo
-└── 📁 yourapp/               # Aplicación Django (opcional)
-    └── 📁 management/
-        └── 📁 commands/
-            └── 📄 send_vacation_summary.py
+├── � src/                          # Código fuente principal
+│   ├── 📄 email_sender.py           # Script principal completo
+│   ├── 📄 email_sender_simple.py    # Versión simplificada
+│   └── 📄 models.py                 # Modelos de datos (Django)
+├── � templates/                    # Plantillas de email
+│   └── 📄 vacation_reminder.html    # Plantilla HTML para emails
+├── 📁 assets/                       # Recursos (imágenes, etc.)
+│   ├── 🖼️ logo.png                  # Logo para emails
+│   └── 📄 logo_instructions.txt     # Instrucciones para el logo
+├── 📁 config/                       # Configuraciones
+│   ├── 📄 .env.example              # Plantilla de configuración
+│   └── 📄 settings.py               # Configuraciones centralizadas
+├── � docs/                         # Documentación adicional
+│   └── 📄 setup_guide.md            # Guía detallada de configuración
+├── � .env                          # Variables de entorno (NO subir a git)
+├── 📄 .gitignore                    # Archivos ignorados por git
+├── 📄 README.md                     # Este archivo
+├── 📄 requirements.txt              # Dependencias de Python
+├── � setup.sh                      # Script de instalación automática
+└── 📁 venv/                         # Entorno virtual (opcional)
 ```
 
 ## 🧪 Testing
