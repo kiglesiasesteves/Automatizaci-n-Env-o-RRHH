@@ -349,6 +349,14 @@ crontab -e
 
 Esta reorganización mantiene toda la funcionalidad original mientras mejora significativamente la estructura y mantenibilidad del proyecto.
 
+# Resultado 
+
+Con este proyecto conseguiremos enviar correos de esta manera para avisar a los empleados de cualquier empresa: 
+
+<img width="1202" height="758" alt="image" src="https://github.com/user-attachments/assets/a91ad420-f5f0-443b-bc3f-a98b26264dd4" />
+
+
+
 ## 🤝 Contribución
 
 1. Fork el proyecto
